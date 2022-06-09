@@ -1,0 +1,16 @@
+This beginner project done by *Martin Mithi* was inspired by "The Odin Project" in the beginner course for JavaScript.
+It contains:
+1. A blank index.html page
+2. A Javascript file
+
+What's in the Javascript file?
+
+The file contains code for the "Rock Paper Scissors" project.
+The overview of how the game works is quite self-explanatory.
+The results of the computer's guess can be seen in the browser console but the user inputs his/her guess in a prompt window after which a record is kept for which the winner is determined at the end of five(5) iterations.
+
+
+
+
+
+Not bad for a beginner, huh? XD

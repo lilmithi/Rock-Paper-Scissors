@@ -6,9 +6,15 @@ let totalPlayer = 0;
 let messg;
 function computerPlay() {
   let result = names[(names.length * Math.random()) | 0];
-  console.log(result);
+  document.getElementById('compselectout').innerHTML=result;
   return result;
 }
+document.body.addEventListener("click", (event) => {
+  if (event.target.nodeName == "BUTTON") {
+    selection(event.target.className, computerPlay());
+  } 
+});
+
 function selection(playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
     pointsComp = "0";
@@ -57,29 +63,4 @@ function selection(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    selection(
-      String(prompt("(Rock Paper Scissors) Enter your selection: ")),
-      computerPlay()
-    );
-    if (pointsComp == "0" && pointsPlayer == "0") {
-      totalComp += 0;
-    } else if (pointsComp == "1" && pointsPlayer == "0") {
-      totalComp += 1;
-    } else if (pointsPlayer == "0" && pointsComp == "0") {
-      totalPlayer += 0;
-    } else if (pointsPlayer == "1" && pointsComp == "0") {
-      totalPlayer += 1;
-    }
-  }
-  if (totalPlayer > totalComp) {
-    messg = "You Won!";
-  } else if (totalComp > totalPlayer) {
-    messg = "You Lose!";
-  } else {
-    messg = "You Draw!";
-  }
-  alert(`Game Over! Comp:${totalComp} You:${totalPlayer} :${messg}`);
-}
-game();
+
